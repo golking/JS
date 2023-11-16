@@ -4,13 +4,7 @@ let objects = [
     {name: "Иван" , surname: "Петров"}
 ]
 function filter(objects, property, propertyName) {
-    let result = []
-    for (let object of objects) {
-        if (object.hasOwnProperty(property) && object[property] === propertyName) {
-            result.push(object)
-        }
-    }
-    return result;
+    return objects.filter(function(el) {return el[property]===propertyName});
 }
 
 console.log(filter(objects, "name", "Иван"))

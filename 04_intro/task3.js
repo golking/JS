@@ -1,14 +1,5 @@
 let array = [5, 1, 3, 2, 7, 6, 4];
-let n = 2;
-let found = false;
-for (let i = 0; i < array.length; i++) {
-    if (array[i] === n) {
-        found = true;
-        console.log("Индекс элемента =", i);
-        break
-    }
-}
+let n = 10;
 
-if (!found) {
-    console.log("Такого элемента в массиве нет")
-}
+index = array.indexOf(n)
+console.log(index !== -1 ? `индекс элемента = ${index}` : "элемент не найден")
