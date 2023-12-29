@@ -5,7 +5,7 @@ const fields = document.querySelectorAll('.field');
 let stepcross = true;
 let number = 16;
 let curOpened = []
-
+let opened = []
 game.addEventListener('click', init);
 btnGame.addEventListener('click', newGame);
 
@@ -29,17 +29,20 @@ function win() {
 function update() {
     if (curOpened.length >= 2) {
         if (curOpened[0].textContent === curOpened[1].textContent) {
+            opened.push(curOpened[0])
+            opened.push(curOpened[1])
             curOpened = [];
         }
         else {
             temp = curOpened.slice(0);
+            curOpened = [];
             setTimeout(() => {temp.forEach(el => {
                 el.classList.replace('opened', 'closed');
                 el.classList.replace('opened', 'closed');
             })}, 1000);
-            curOpened = [];
         }
     }
+    console.log(curOpened)
 }
 
 function newGame() {
